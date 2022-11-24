@@ -24,7 +24,7 @@ public class VIPCustomer extends Customer{
 	@Override
 	public int calcPrice(int price) {
 		bonusPoint += (price * bonusRatio); //보너스 포인트 계산
-		return price; //가격 리턴
+		return price-(int)(price*saleRatio); //가격 리턴
 	}
 	
 	/*

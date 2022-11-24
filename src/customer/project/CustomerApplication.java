@@ -41,24 +41,23 @@ public class CustomerApplication {
 		}
 	}
 	
+	/*
+	 【문항6】 클래스 다이어그램을 참고하여 CustomerApplication.java에서 모든 고객정보를 출력하는   
+   showAllCustomer 메소드를 완성하시오.
+	 */
 	public static void showAllCustomer() {
-		/*
-		 【문항6】 클래스 다이어그램을 참고하여 CustomerApplication.java에서 모든 고객정보를 출력하는   
-        showAllCustomer 메소드를 완성하시오.
-		 */
+		
 		System.out.println("=======모든 고객 정보 출력=======");
 		for(Customer customer : customerList) {
 			System.out.println(customer.showCustomerInfo());
 		}
-		
-
 	}
 	
+	/*
+	 【문항7】 클래스 다이어그램을 참고하여 CustomerApplication.java에서 고객 id를 이용해 해당
+   Customer 객체를 찾는 findCustomer 메소드를 완성하시오.
+	 */
 	public static Customer findCustomer(int customerID) {
-		/*
-		 【문항7】 클래스 다이어그램을 참고하여 CustomerApplication.java에서 고객 id를 이용해 해당
-        Customer 객체를 찾는 findCustomer 메소드를 완성하시오.
-		 */
 		Customer findCustomer = null;
 		for(Customer customer : customerList) {
 			if(customer.getCustomerID() == customerID) {
@@ -68,11 +67,11 @@ public class CustomerApplication {
 		return findCustomer;
 	}
 	
+	/*
+	 【문항8】클래스 다이어그램을 참고하여 CustomerApplication.java에서 해당 고객의 할인율과
+   보너스 포인트를 보너스 포인트 계산하는 showPriceBonus 메소드를 완성하시오.
+	 */
 	public static void showPriceBonus(Customer customer, int price) {
-		/*
-		 【문항8】클래스 다이어그램을 참고하여 CustomerApplication.java에서 해당 고객의 할인율과
-        보너스 포인트를 보너스 포인트 계산하는 showPriceBonus 메소드를 완성하시오.
-		 */
 		int cost = customer.calcPrice(price);
 		System.out.println("======= 해당 고객의 할인율과 보너스 포인트 계산 =======");
 		System.out.println(customer.getCustomerName() + "님의 지불금액: " + cost + "원");
